@@ -1,20 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaSearch } from "react-icons/fa";
+import { useSearchStore } from "../store/store";
+import { WeatherOptionalParams } from "../types";
 
 type Props = {
-  fetchWeather: (cityName: string, airQuality?: string) => Promise<void>;
+  fetchCurrentWeather: (
+    cityName: string,
+    airQuality?: WeatherOptionalParams
+  ) => Promise<void>;
 };
 
-export const SearchBar = ({ fetchWeather }: Props) => {
-  const [searchText, setSearchText] = useState<string>("");
-  const updateSearchText = (text: string) => {
-    setSearchText(text);
-  };
+export const SearchBar = ({ fetchCurrentWeather }: Props) => {
+  const searchText = useSearchStore((state) => state.searchText);
+  const updateLastSearch = useSearchStore((state) => state.updateLastSearch);
+  const updateSearchText = useSearchStore((state) => state.updateSearchText);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    await fetchWeather(searchText);
+    updateLastSearch(searchText);
+    await fetchCurrentWeather(searchText);
   };
+
   return (
     <form className="flex justify-center" onSubmit={handleSubmit}>
       <div className="w-full h-16 relative rounded-2xl">
@@ -23,7 +29,7 @@ export const SearchBar = ({ fetchWeather }: Props) => {
           onChange={(e) => updateSearchText(e.target.value)}
           value={searchText}
           className=" font-poppins text-gray-400 pl-5 w-full h-full text-md rounded-lg bg-gray-700 placeholder:text-white "
-          placeholder="Search..."
+          placeholder="Enter a city..."
           required
         />
         <button>
