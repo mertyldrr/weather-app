@@ -9,7 +9,7 @@ export const WeatherTabs = () => {
   return (
     <div className="tabs py-2">
       <button
-        className={`tab p-0 ${
+        className={`tab text-base px-4 ${
           activeTab === WeatherChoice.Current ? "tab-active" : ""
         }`}
         onClick={() => updateActiveTab(WeatherChoice.Current)}
@@ -17,7 +17,7 @@ export const WeatherTabs = () => {
         Current
       </button>
       <button
-        className={`tab ${
+        className={`tab text-base px-4 ${
           activeTab === WeatherChoice.Forecast ? "tab-active" : ""
         }`}
         onClick={() => updateActiveTab(WeatherChoice.Forecast)}
