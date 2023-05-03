@@ -6,6 +6,12 @@ module.exports = {
     fontFamily: {
       poppins: ['"Poppins"', ...defaultTheme.fontFamily.sans],
     },
+    extend: {
+      backgroundImage: {
+        munich: "url('assets/munich.jpg')",
+      },
+    },
   },
-  plugins: [],
+
+  plugins: [require("daisyui"), require("tailwind-scrollbar")],
 };
