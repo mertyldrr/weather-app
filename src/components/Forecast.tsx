@@ -20,10 +20,10 @@ export const Forecast = () => {
         ))}
       </div>
 
-      <p className="font-poppins font text-2xl text-white mt-6">
+      <p className="font-poppins font text-2xl mt-6">
         {`Max temp: ${forecastData![activeDay].maxtemp_c} ${CELSIUS_SYMBOL}`}
       </p>
-      <p className="font-poppins font-normal text-2xl text-white mt-4">
+      <p className="font-poppins font-normal text-2xl mt-4">
         {`Min temp: ${forecastData![activeDay].mintemp_c} ${CELSIUS_SYMBOL}`}
       </p>
     </div>
