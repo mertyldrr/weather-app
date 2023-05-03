@@ -19,6 +19,7 @@ export const SearchBar = ({ fetchCurrentWeather }: Props) => {
     event.preventDefault();
     updateLastSearch(searchText);
     await fetchCurrentWeather(searchText);
+    updateSearchText("");
   };
 
   return (
@@ -28,7 +29,7 @@ export const SearchBar = ({ fetchCurrentWeather }: Props) => {
           type="text"
           onChange={(e) => updateSearchText(e.target.value)}
           value={searchText}
-          className=" font-poppins text-gray-400 pl-5 w-full h-full text-md rounded-lg bg-gray-700 placeholder:text-white "
+          className=" font-poppins text-white pl-5 w-full h-full text-md rounded-lg bg-gray-700 placeholder:text-gray-500 "
           placeholder="Enter a city..."
           required
         />
