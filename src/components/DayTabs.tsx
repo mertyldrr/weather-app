@@ -8,9 +8,11 @@ export const DayTabs = () => {
   );
   const forecastData = useWeatherStore((state) => state.forecastWeather);
 
+  if (!forecastData) return null;
+
   return (
     <div className="tabs flex justify-around">
-      {forecastData?.map((forecastDay, index) => (
+      {forecastData.map((forecastDay, index) => (
         <button
           key={forecastDay.date}
           className={`tab p-0 ${dayActiveTab === index ? "tab-active" : ""}`}
