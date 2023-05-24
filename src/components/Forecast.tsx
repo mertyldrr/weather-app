@@ -6,7 +6,7 @@ export const Forecast = () => {
   const forecastData = useWeatherStore((state) => state.forecastWeather);
   const activeDay = useTabStore((state) => state.dayActiveTab);
   return (
-    <div>
+    <div className="text-white opacity-80">
       <div className="flex overflow-x-auto scrollbar-none space-x-8 py-2">
         {forecastData![activeDay].hour.map((hour) => (
           <div className="flex flex-col" key={hour.time_epoch}>

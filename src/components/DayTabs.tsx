@@ -15,7 +15,9 @@ export const DayTabs = () => {
       {forecastData.map((forecastDay, index) => (
         <button
           key={forecastDay.date}
-          className={`tab p-0 ${dayActiveTab === index ? "tab-active" : ""}`}
+          className={`tab p-0 text-white ${
+            dayActiveTab === index ? "tab-active opacity-90" : "opacity-50"
+          }`}
           onClick={() => updateForecastDayTab(index)}
         >
           <p>{formatDay(forecastDay.date)}</p>

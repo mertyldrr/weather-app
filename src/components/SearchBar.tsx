@@ -29,7 +29,7 @@ export const SearchBar = ({ fetchCurrentWeather }: Props) => {
           type="text"
           onChange={(e) => updateSearchText(e.target.value)}
           value={searchText}
-          className="font-poppins text-white pl-5 w-full h-full text-sm lg:text-base rounded-lg bg-gray-700 placeholder:text-gray-500 "
+          className="font-poppins pl-5 w-full h-full text-sm lg:text-base rounded-lg text-white opacity-80 bg-gray-700 placeholder:text-gray-500 "
           placeholder="Enter a city..."
           autoComplete="off"
           required
