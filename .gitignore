@@ -10,7 +10,7 @@
 
 # production
 /build
-
+/dist
 #vscode
 settings.json
 
