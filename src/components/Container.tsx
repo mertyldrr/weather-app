@@ -95,7 +95,7 @@ export const Container = () => {
 
   return (
     <div className="w-screen h-screen bg-munich bg-cover flex justify-center items-center">
-      <div className="w-full lg:w-1/2 h-3/5 lg:h-2/5 bg-black rounded-2xl p-8 opacity-80">
+      <div className="w-full lg:w-1/2 bg-black rounded-2xl p-8 opacity-80">
         <SearchBar fetchCurrentWeather={fetchCurrentWeather} />
         <div>
           <WeatherTabs />
